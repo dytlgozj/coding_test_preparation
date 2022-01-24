@@ -17,11 +17,11 @@ def find_parent_more_efficient(parent, x):
     return parent[x]
 
 def union_parent(parent, a, b):
-    pa, pb = find_parent_more_efficient(parent, a), find_parent_more_efficient(parent, b)
-    if pa < pb:
-        parent[b] = pa
+    a, b = find_parent_more_efficient(parent, a), find_parent_more_efficient(parent, b)
+    if a < b:
+        parent[b] = a
     else:
-        parent[a] = pb
+        parent[a] = b
 
 v, e = map(int, input().split())
 parent = [0] * (v + 1)
