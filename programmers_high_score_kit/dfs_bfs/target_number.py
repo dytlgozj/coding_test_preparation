@@ -17,7 +17,5 @@ from itertools import product
 
 def solution(numbers, target):
     l = [(x, -x) for x in numbers]
-
-    print(f"product(*l) = {list(product(*l))}")
     s = list(map(sum, product(*l)))
     return s.count(target)
